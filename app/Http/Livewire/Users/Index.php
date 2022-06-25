@@ -16,4 +16,11 @@ class Index extends Component
             'users' => User::query()->paginate(10),
         ]);
     }
+
+    public function delete($id)
+    {
+        $user = User::query()->find($id);
+        $user?->delete();
+    }
+
 }
