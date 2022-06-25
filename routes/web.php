@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Users\Edit;
 use App\Http\Livewire\Users\Index;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+
     Route::get('/users', Index::class)->name('users');
+    Route::get('/users/edit/{user}', Edit::class)->name('users.edit');
 });
