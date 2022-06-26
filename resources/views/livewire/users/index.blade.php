@@ -34,10 +34,10 @@
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->email }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->birthday }}</td>
                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->created_at }}</td>
-                                <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">View<span class="sr-only"></span></a>
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only"></span></a>
-                                    <a href="#" class="text-red-500 hover:text-indigo-900">Delete<span class="sr-only"></span></a>
+                                <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                    <a href="#" class="mx-1 text-indigo-600 hover:text-indigo-900">View<span class="sr-only"></span></a>
+                                    <a href="{{ route ('users.edit', ['user' => $user->id]) }}" class="mx-1 text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only"></span></a>
+                                    <a href="#" wire:click="delete({{ $user->id }})" class="mx-1 text-red-500 hover:text-indigo-900">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
