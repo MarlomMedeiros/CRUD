@@ -22,5 +22,4 @@ class Index extends Component
         $user = User::query()->find($id);
         $user?->delete();
     }
-
 }
