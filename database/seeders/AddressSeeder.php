@@ -4,13 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class AddressesSeeder extends Seeder
+class AddressSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         //

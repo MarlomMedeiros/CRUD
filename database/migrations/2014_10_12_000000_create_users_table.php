@@ -20,8 +20,8 @@ return new class extends Migration {
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone')->nullable();
             $table->string('password');
-            $table->date('birthday');
-            $table->string('cpf')->nullable();
+            $table->date('birthday')->nullable();
+            $table->string('cpf')->unique()->nullable();
             $table->rememberToken();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
