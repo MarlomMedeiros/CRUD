@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Users;
 
 use App\Models\User;
-use Illuminate\View\View;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class Show extends Component

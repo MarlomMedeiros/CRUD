@@ -2,7 +2,7 @@
     <div class="bg-white shadow overflow-hidden sm:rounded-lg">
         <div class="mx-5 mb-5">
             <div class="mt-2">
-                <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}"
+                <img src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}"
                      class="rounded-full h-20 w-20 object-cover">
             </div>
         </div>

@@ -11,16 +11,14 @@ class Index extends Component
 {
     use WithPagination;
 
+    protected $listeners = [
+        'userDeleted' => '$refresh'
+    ];
+
     public function render(): View
     {
         return view('livewire.users.index', [
             'users' => User::query()->paginate(10),
         ]);
-    }
-
-    public function delete($id): void
-    {
-        $user = User::query()->find($id);
-        $user?->delete();
     }
 }

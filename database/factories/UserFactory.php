@@ -27,7 +27,7 @@ class UserFactory extends Factory
             'last_name'         => $this->faker->lastName(),
             'cpf'               => $this->faker->cpf(false),
             'phone'             => $this->faker->landlineNumber(false),
-            'birthday'          => $this->faker->dateTimeBetween($startDate = '-60 years', $endDate = '-18 years', $timezone = null),
+            'birthday'          => $this->faker->DateTime()->format('Y-m-d'),
             'email'             => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password'          => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

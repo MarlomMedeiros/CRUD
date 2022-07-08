@@ -55,42 +55,46 @@
 
                         <div x-data class="grid grid-cols-6 mt-2 gap-6">
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="name" class="block text-sm font-medium text-gray-700">First name</label>
+                                <label for="name" class="block text-sm font-medium text-gray-700">First name*</label>
                                 <input wire:model.defer="user.name" type="text" id="name" autocomplete="name"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
+                                <label for="last_name" class="block text-sm font-medium text-gray-700">Last
+                                    name*</label>
                                 <input wire:model.defer="user.last_name" type="text" name="last_name" id="last_name"
                                        autocomplete="last_name"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email
+                                    address*</label>
                                 <input wire:model.defer="user.email" type="text" name="email" id="email"
                                        autocomplete="email"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="cpf" class="block text-sm font-medium text-gray-700">CPF</label>
-
-                                <input wire:model.defer="user.cpf" type="text" x-mask="999.999.999-99"
-                                       placeholder="999.999.999-95" name="cpf" id="cpf" autocomplete="cpf"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <x-inputs.maskable
+                                        wire:model.defer="user.cpf"
+                                        label="CPF"
+                                        mask="###.###.###-##"
+                                        name="cpf"
+                                        placeholder="CPF"
+                                />
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                                <label for="password" class="block text-sm font-medium text-gray-700">Password*</label>
                                 <input wire:model.defer="password" type="password"
                                        autocomplete="password"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
 
                             <div class="col-span-6 sm:col-span-3">
-                                <label for="birthday" class="block text-sm font-medium text-gray-700">Birthday</label>
+                                <label for="birthday" class="block text-sm font-medium text-gray-700">Birthday*</label>
                                 <input type="date" placeholder="DD/MM/YYYY" wire:model.defer="user.birthday"
                                        name="birthday" id="birthday" autocomplete="birthday"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
@@ -107,10 +111,13 @@
                             </div>
 
                             <div class="col-span-3">
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                                <input wire:model.defer="user.phone" type="text" x-mask="(99) 9999-9999"
-                                       placeholder="(99) 9999-9999" id="phone" name="phone" autocomplete="phone"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <x-inputs.maskable
+                                        wire:model.defer="user.phone"
+                                        label="Phone Number"
+                                        mask="['+## ####-####']"
+                                        name="phone"
+                                        placeholder="Phone number"
+                                />
                             </div>
 
                             <div class="col-span-4">
@@ -122,12 +129,13 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal
-                                    code</label>
-                                <input wire:model.defer="address.zip" type="text" x-mask="99999-999"
-                                       placeholder="0000-000" name="postal-code" id="postal-code"
-                                       autocomplete="postal-code"
-                                       class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <x-inputs.maskable
+                                        wire:model.defer="address.zip"
+                                        label="ZIP / Postal code"
+                                        mask="#####-###"
+                                        name="Zip Code"
+                                        placeholder="Zip Code"
+                                />
                             </div>
 
 
