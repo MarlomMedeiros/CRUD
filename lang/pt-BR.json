@@ -156,7 +156,11 @@
     "User updated successfully" : "Usuário atualizado com sucesso",
     "Login with Google" : "Entrar com Google",
     "Login with GitHub" : "Entrar com GitHub",
-    "We found {errors} validation error(s)" : "Foram encontrados {errors} erro(s) de validação"
+    "We found {errors} validation error(s)" : "Foram encontrados {errors} erro(s) de validação",
+    "User created successfully" : "Usuário criado com sucesso",
+    "User :name has been created successfully" : "Usuário :name foi criado com sucesso",
+    "User deleted successfully" : "Usuário deletado com sucesso",
+    "User has been deleted successfully" : "Usuário foi deletado com sucesso"
 
 
 }

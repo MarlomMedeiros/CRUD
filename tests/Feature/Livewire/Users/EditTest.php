@@ -63,7 +63,7 @@ class EditTest extends TestCase
             ->set('address.state', 'Rio de Janeiro')
             ->set('address.zip', '48834169')
             ->call('save')
-            ->assertRedirect(route('users'));
+            ->assertRedirect(route('users.index'));
 
         $this->assertDatabaseHas('users', [
             'name' => 'Test',

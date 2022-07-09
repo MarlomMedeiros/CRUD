@@ -45,17 +45,20 @@ class Create extends Component
         ];
     }
 
-    protected $validationAttributes = [
-        'user.name'       => 'first name',
-        'user.last_name'  => 'last name',
-        'user.cpf'        => 'CPF',
-        'user.phone'      => 'phone number',
-        'address.country' => 'country',
-        'address.address' => 'address',
-        'address.city'    => 'city',
-        'address.state'   => 'state',
-        'address.zip'     => 'zip'
-    ];
+    protected function validationAttributes(): array
+    {
+        return [
+            'user.name'       => __('name'),
+            'user.last_name'  => __('last name'),
+            'user.cpf'        => __('CPF'),
+            'user.phone'      => __('phone number'),
+            'address.country' => __('country'),
+            'address.address' => __('address'),
+            'address.city'    => __('city'),
+            'address.state'   => __('state'),
+            'address.zip'     => __('zip code'),
+        ];
+    }
 
     public function mount(): void
     {
@@ -78,7 +81,7 @@ class Create extends Component
 
         $this->user->address()->save($this->address);
 
-        $this->redirect(route('users'));
+        $this->redirect(route('users.index'));
 
         $this->notification()->send([
             'title'       => __('User created successfully'),

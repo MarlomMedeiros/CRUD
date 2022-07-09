@@ -45,7 +45,7 @@ class CreateTest extends TestCase
             ->set('address.zip', '48834169')
             ->set('password', '12345678')
             ->call('create')
-            ->assertRedirect(route('users'));
+            ->assertRedirect(route('users.index'));
 
         $this->assertDatabaseHas('users', [
             'name' => 'Test',

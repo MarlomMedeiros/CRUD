@@ -66,8 +66,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-
-    Route::get('/users', Index::class)->name('users');
+    Route::get('/users', Index::class)->name('users.index');
     Route::get('/users/create', Create::class)->name('users.create');
     Route::get('/users/edit/{user}', Edit::class)->name('users.edit');
     Route::get('/users/{user}', Show::class)->name('users.show');

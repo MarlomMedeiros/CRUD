@@ -17,7 +17,7 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users.*') || request()->routeIs('users')">
+                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*') || request()->routeIs('users')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
                 </div>
@@ -96,7 +96,7 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
-        <x-jet-responsive-nav-link href="{{ route('users') }}" :active="request()->routeIs('users.*') || request()->routeIs('users')">
+        <x-jet-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*') || request()->routeIs('users')">
             {{ __('Users') }}
         </x-jet-responsive-nav-link>
         <!-- Responsive Settings Options -->

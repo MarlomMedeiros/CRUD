@@ -44,15 +44,15 @@ class Edit extends Component
     protected function validationAttributes(): array
     {
         return [
-            'user.name'       => __('Name'),
-            'user.last_name'  => __('Last Name'),
+            'user.name'       => __('name'),
+            'user.last_name'  => __('last name'),
             'user.cpf'        => __('CPF'),
-            'user.phone'      => __('Phone Number'),
-            'address.country' => __('Country'),
-            'address.address' => __('Address'),
-            'address.city'    => __('City'),
-            'address.state'   => __('State'),
-            'address.zip'     => __('Zip Code'),
+            'user.phone'      => __('phone number'),
+            'address.country' => __('country'),
+            'address.address' => __('address'),
+            'address.city'    => __('city'),
+            'address.state'   => __('state'),
+            'address.zip'     => __('zip code'),
         ];
     }
 
@@ -75,13 +75,14 @@ class Edit extends Component
 
         $this->emit('saved');
 
-        $this->redirect(route('users'));
-
         $this->notification()->send([
             'title'       => __('User successfully updated'),
             'description' => __('User :name has been updated successfully', ['name' => $this->user->name]),
             'icon'        => 'success',
         ]);
+
+
+        $this->redirect(route('users.index'));
     }
 
     public function deleteProfilePhoto(): void
