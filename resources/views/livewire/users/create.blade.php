@@ -5,7 +5,7 @@
                 @csrf
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
-                        <x-jet-validation-errors class="mb-4"/>
+                        <x-errors class="mb-2" title="{{ __('We found {errors} validation error(s)') }}"/>
                         <div>
                             <label class="block text-sm font-medium text-gray-700"> @lang('Photo') </label>
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -151,10 +151,10 @@
                         <x-jet-action-message class="mr-3" on="create">
                             @lang('Created')
                         </x-jet-action-message>
-                        <button type="submit"
-                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+
+                        <x-jet-button type="submit" wire:loading.attr="disabled" wire:target="photo">
                             @lang('Create')
-                        </button>
+                        </x-jet-button>
                     </div>
                 </div>
             </form>

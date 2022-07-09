@@ -23,7 +23,7 @@ class Index extends Component
     ];
 
     protected $listeners = [
-        'userDeleted' => '$refresh'
+        'userDeleted' => '$refresh',
     ];
 
     public function orderBy(string $orderBy, string $orderDirection): void
@@ -34,6 +34,8 @@ class Index extends Component
 
     public function render(): View
     {
+        $this->emitSelf('saved');
+
         return view('livewire.users.index', [
             'users' => User::query()
                 ->search($this->search)

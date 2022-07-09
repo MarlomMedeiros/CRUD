@@ -53,7 +53,6 @@ Route::get('/auth/{driver}/callback', function ($driver) {
 
 });
 
-
 Route::get('/', function () {
     return view('auth.login');
 });

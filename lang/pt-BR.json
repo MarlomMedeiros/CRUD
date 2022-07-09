@@ -152,8 +152,11 @@
     "Brazil" : "Brasil",
     "Portugal" : "Portugal",
     "Created" : "Criado",
+    "User :name has been updated successfully" : "Usuário :name foi atualizado com sucesso.",
+    "User updated successfully" : "Usuário atualizado com sucesso",
     "Login with Google" : "Entrar com Google",
-    "Login with GitHub" : "Entrar com GitHub"
+    "Login with GitHub" : "Entrar com GitHub",
+    "We found {errors} validation error(s)" : "Foram encontrados {errors} erro(s) de validação"
 
 
 }

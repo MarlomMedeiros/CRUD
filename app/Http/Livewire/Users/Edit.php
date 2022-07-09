@@ -9,10 +9,13 @@ use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 use Livewire\Redirector;
 use Livewire\WithFileUploads;
+use WireUi\Traits\Actions;
 
 class Edit extends Component
 {
     use WithFileUploads;
+
+    use Actions;
 
     public User $user;
 
@@ -37,24 +40,28 @@ class Edit extends Component
         ];
     }
 
-    protected $validationAttributes = [
-        'user.name'       => 'first name',
-        'user.last_name'  => 'last name',
-        'user.cpf'        => 'CPF',
-        'user.phone'      => 'phone number',
-        'address.country' => 'country',
-        'address.address' => 'address',
-        'address.city'    => 'city',
-        'address.state'   => 'state',
-        'address.zip'     => 'zip'
-    ];
+
+    protected function validationAttributes(): array
+    {
+        return [
+            'user.name'       => __('Name'),
+            'user.last_name'  => __('Last Name'),
+            'user.cpf'        => __('CPF'),
+            'user.phone'      => __('Phone Number'),
+            'address.country' => __('Country'),
+            'address.address' => __('Address'),
+            'address.city'    => __('City'),
+            'address.state'   => __('State'),
+            'address.zip'     => __('Zip Code'),
+        ];
+    }
 
     public function mount(): void
     {
         $this->address = $this->user->address;
     }
 
-    public function save(): RedirectResponse|Redirector
+    public function save(): void
     {
         $this->validate();
 
@@ -68,7 +75,13 @@ class Edit extends Component
 
         $this->emit('saved');
 
-        return redirect()->route('users');
+        $this->redirect(route('users'));
+
+        $this->notification()->send([
+            'title'       => __('User successfully updated'),
+            'description' => __('User :name has been updated successfully', ['name' => $this->user->name]),
+            'icon'        => 'success',
+        ]);
     }
 
     public function deleteProfilePhoto(): void

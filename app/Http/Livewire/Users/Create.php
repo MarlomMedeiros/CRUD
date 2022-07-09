@@ -10,10 +10,13 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\Redirector;
 use Livewire\WithFileUploads;
+use WireUi\Traits\Actions;
 
 class Create extends Component
 {
     use WithFileUploads;
+
+    use Actions;
 
     public User $user;
 
@@ -61,7 +64,7 @@ class Create extends Component
         $this->address = new Address();
     }
 
-    public function create(): RedirectResponse|Redirector
+    public function create()
     {
         $this->validate();
 
@@ -75,7 +78,13 @@ class Create extends Component
 
         $this->user->address()->save($this->address);
 
-        return redirect()->route('users');
+        $this->redirect(route('users'));
+
+        $this->notification()->send([
+            'title'       => __('User created successfully'),
+            'description' => __('User :name has been created successfully', ['name' => $this->user->name]),
+            'icon'        => 'success',
+        ]);
     }
 
     public function render(): View
