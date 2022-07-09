@@ -24,6 +24,7 @@
     "fakerphp/faker": "^1.9.1",
     "friendsofphp/php-cs-fixer": "^3.8",
     "laravel/sail": "^1.0.1",
+    "lucascudo/laravel-pt-br-localization": "^1.2",
     "mockery/mockery": "^1.4.4",
     "nunomaduro/collision": "^6.1",
     "nunomaduro/larastan": "2.0",

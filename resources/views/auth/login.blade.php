@@ -26,11 +26,11 @@
             </div>
 
             <a href="{{ route('login.social.redirect', ['driver' => 'google']) }}" class="mt-4 w-full justify-center inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
-                Logar com Google
+                @lang('Login with Google')
             </a>
 
             <a href="{{ route('login.social.redirect', ['driver' => 'github']) }}" class="mt-4 w-full justify-center inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
-                Logar com GitHub
+                @lang('Login with GitHub')
             </a>
 
             <div class="block mt-4">
